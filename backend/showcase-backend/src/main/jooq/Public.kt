@@ -4,6 +4,7 @@
 package jooq
 
 
+import jooq.tables.Customer
 import jooq.tables.Project
 import jooq.tables.ProjectKeywords
 import jooq.tables.ProjectProgress
@@ -33,6 +34,11 @@ open class Public : SchemaImpl(DSL.name("public"), DefaultCatalog.DEFAULT_CATALO
          */
         val PUBLIC: Public = Public()
     }
+
+    /**
+     * The table <code>public.customer</code>.
+     */
+    val CUSTOMER: Customer get() = Customer.CUSTOMER
 
     /**
      * The table <code>public.project</code>.
@@ -77,6 +83,7 @@ open class Public : SchemaImpl(DSL.name("public"), DefaultCatalog.DEFAULT_CATALO
     override fun getCatalog(): Catalog = DefaultCatalog.DEFAULT_CATALOG
 
     override fun getTables(): List<Table<*>> = listOf(
+        Customer.CUSTOMER,
         Project.PROJECT,
         ProjectKeywords.PROJECT_KEYWORDS,
         ProjectProgress.PROJECT_PROGRESS,

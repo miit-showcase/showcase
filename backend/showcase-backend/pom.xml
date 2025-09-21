@@ -27,8 +27,9 @@
         <url/>
     </scm>
     <properties>
-        <java.version>25</java.version>
+        <java.version>24</java.version>
         <kotlin.version>2.2.0</kotlin.version>
+        <jooq.version>3.20.7</jooq.version>
     </properties>
     <dependencies>
         <dependency>
@@ -104,7 +105,7 @@
             <plugin>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
-                <version>3.20.7</version>
+                <version>${jooq.version}</version>
 
                 <executions>
                     <execution>

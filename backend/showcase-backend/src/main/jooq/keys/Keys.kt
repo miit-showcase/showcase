@@ -5,6 +5,7 @@
 package jooq.keys
 
 
+import jooq.tables.Customer
 import jooq.tables.Project
 import jooq.tables.ProjectKeywords
 import jooq.tables.ProjectProgress
@@ -13,6 +14,7 @@ import jooq.tables.ProjectScope
 import jooq.tables.Student
 import jooq.tables.Teacher
 import jooq.tables.Team
+import jooq.tables.records.CustomerRecord
 import jooq.tables.records.ProjectKeywordsRecord
 import jooq.tables.records.ProjectProgressRecord
 import jooq.tables.records.ProjectRecord
@@ -34,6 +36,7 @@ import org.jooq.impl.QOM.ForeignKeyRule
 // UNIQUE and PRIMARY KEY definitions
 // -------------------------------------------------------------------------
 
+val CUSTOMER_PKEY: UniqueKey<CustomerRecord> = Internal.createUniqueKey(Customer.CUSTOMER, DSL.name("customer_pkey"), arrayOf(Customer.CUSTOMER.UUID), true)
 val PROJECT_PKEY: UniqueKey<ProjectRecord> = Internal.createUniqueKey(Project.PROJECT, DSL.name("project_pkey"), arrayOf(Project.PROJECT.UUID), true)
 val PROJECT_KEYWORDS_PKEY: UniqueKey<ProjectKeywordsRecord> = Internal.createUniqueKey(ProjectKeywords.PROJECT_KEYWORDS, DSL.name("project_keywords_pkey"), arrayOf(ProjectKeywords.PROJECT_KEYWORDS.ID), true)
 val PROJECT_PROGRESS_PKEY: UniqueKey<ProjectProgressRecord> = Internal.createUniqueKey(ProjectProgress.PROJECT_PROGRESS, DSL.name("project_progress_pkey"), arrayOf(ProjectProgress.PROJECT_PROGRESS.UUID), true)

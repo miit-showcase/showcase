@@ -5,6 +5,7 @@
 package jooq.tables.references
 
 
+import jooq.tables.Customer
 import jooq.tables.Project
 import jooq.tables.ProjectKeywords
 import jooq.tables.ProjectProgress
@@ -15,6 +16,11 @@ import jooq.tables.Teacher
 import jooq.tables.Team
 
 
+
+/**
+ * The table <code>public.customer</code>.
+ */
+val CUSTOMER: Customer = Customer.CUSTOMER
 
 /**
  * The table <code>public.project</code>.

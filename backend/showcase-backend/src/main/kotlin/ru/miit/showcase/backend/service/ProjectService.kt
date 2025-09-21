@@ -22,16 +22,16 @@ class ProjectService(
             //.offset(offset)
             .fetch { record ->
                 val projectRec: ProjectRecord = record.into(PROJECT)
-                val customerRec: CustomerRecord? = record.into(CUSTOMER)
+                val customerRec: CustomerRecord = record.into(CUSTOMER)
                 projectRec.toDomain(customerRec)
             }
 }
 
-private fun ProjectRecord.toDomain(customerRecord: CustomerRecord?) = Project(
+private fun ProjectRecord.toDomain(customerRecord: CustomerRecord) = Project(
     uuid = uuid,
     revision = revision?.toLong(),
     title = title,
-    customer = customerRecord?.toDomain(),
+    customer = customerRecord.toDomain(),
     goal = goal,
     projectBarrier = projectBarrier,
     alternativeSolutions = alternativeSolutions,

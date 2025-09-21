@@ -81,3 +81,12 @@ CREATE TABLE project_request (
                                  FOREIGN KEY (project_id) REFERENCES project(uuid),
                                  FOREIGN KEY (team_id) REFERENCES team(uuid)
 );
+
+CREATE TABLE customer(
+                         uuid VARCHAR(255) PRIMARY KEY,
+                         revision INT,
+                         idempotencyToken VARCHAR(255),
+                         firstName VARCHAR(255),
+                         lastName VARCHAR(255),
+                         patronymic VARCHAR(255)
+)
